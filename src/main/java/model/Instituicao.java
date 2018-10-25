@@ -8,7 +8,6 @@ package model;
 
 import java.util.Objects;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -16,18 +15,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author Gabriel Strack
  */
 @Document
-public class Cidade {
+public class Instituicao {
     @Id
-    private String idCidade;
-    @Indexed (unique = true)
+    private String id;
     private String nome;
-    @Indexed (unique = true)
-    private String sigla;
-
-    public Cidade(String nome, String sigla) {
-        this.nome = nome;
-        this.sigla = sigla;
-    }
+    private String cnpj;
 
     public String getNome() {
         return nome;
@@ -37,18 +29,18 @@ public class Cidade {
         this.nome = nome;
     }
 
-    public String getSigla() {
-        return sigla;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setSigla(String sigla) {
-        this.sigla = sigla;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.idCidade);
+        int hash = 7;
+        hash = 61 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -63,8 +55,8 @@ public class Cidade {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Cidade other = (Cidade) obj;
-        if (!Objects.equals(this.idCidade, other.idCidade)) {
+        final Instituicao other = (Instituicao) obj;
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;

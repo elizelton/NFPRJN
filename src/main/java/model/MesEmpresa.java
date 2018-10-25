@@ -6,21 +6,47 @@
 
 package model;
 
+import java.util.Objects;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * 
  * @author Gabriel Strack
  */
+@Document
+@CompoundIndexes({
+    @CompoundIndex(
+            name = "anoMesEmpresa_idx",
+            def = "{'ano': 1,'mes': 1, 'empresa' : 1}", unique = true)
+
+})
 public class MesEmpresa {
+    @Id
+    private String id;
     @DBRef
     private Empresa empresa;
-    @DBRef
-    private Meses mes;
+    private String mes;
+    private String ano;
     private int numeroNotas;
     private Double valorTotal;
     private Double credito;
 
+    public String getNomeFantasia(){
+        return empresa.getNomeFantasia();
+    }
+    
+    public String getCidadeSigla(){
+        if (empresa.getCidade() != null){
+            return empresa.getCidade().getSigla();
+        }else{
+            return "";
+        }
+    }
+    
     public Empresa getEmpresa() {
         return empresa;
     }
@@ -29,14 +55,22 @@ public class MesEmpresa {
         this.empresa = empresa;
     }
 
-    public Meses getMes() {
+    public String getMes() {
         return mes;
     }
 
-    public void setMes(Meses mes) {
+    public void setMes(String mes) {
         this.mes = mes;
     }
 
+    public String getAno() {
+        return ano;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+    
     public int getNumeroNotas() {
         return numeroNotas;
     }
@@ -61,13 +95,38 @@ public class MesEmpresa {
         this.credito = credito;
     }
     
-    public Double getMediaPorNota(){
-        Double media;
-        return media = getCredito() / getNumeroNotas();
+    public Double getPercCredito(){
+        return (credito/valorTotal)*100;
     }
     
-//    public Double getPercentual(){
-//        Double percentual;
-//        return percentual = 
-//    }
+    public Double getMediaPorNota(){
+        return credito/numeroNotas;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MesEmpresa other = (MesEmpresa) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
