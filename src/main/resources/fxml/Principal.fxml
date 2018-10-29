@@ -8,26 +8,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="view.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrincipalController">
     <children>
         <VBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <TabPane tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                        <Tab text="MesEmpresa">
+                        <Tab text="%lbl.mesEmpresa.text">
                             <content>
-                                <fx:include source="MesEmpresa.fxml"/>
+                                <fx:include source="MesEmpresa.fxml" />
                             </content>
                         </Tab>
-                        <Tab text="MesCidade">
+                        <Tab text="%lbl.mesCidades.text">
                             <content>
-                                <fx:include source="MesCidade.fxml"/>
+                                <fx:include source="MesCidade.fxml" />
                             </content>
                         </Tab>
-                        <Tab text="Empresa">
+                        <Tab text="%lbl.empresas.text">
                             <content>
-                                <fx:include source="Empresa.fxml"/>
+                                <fx:include source="Empresa.fxml" />
                             </content>
                         </Tab>
                     </tabs>
