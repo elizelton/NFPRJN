@@ -52,7 +52,7 @@
     </build>
     
     <dependencies>
-        <dependency>
+     <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
             <version>1.8.2.RELEASE</version>
@@ -78,7 +78,6 @@
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20141113</version>
-            <type>jar</type>
         </dependency>
     </dependencies>
 
