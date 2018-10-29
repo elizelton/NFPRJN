@@ -19,6 +19,9 @@
                     <children>
                         <Button mnemonicParsing="false" text="Button" />
                         <Button mnemonicParsing="false" text="Button" />
+                        <Separator orientation="VERTICAL" prefHeight="50.0" />
+                        <ComboBox prefWidth="150.0" />
+                        <Separator orientation="VERTICAL" prefHeight="50.0" />
                         <Button mnemonicParsing="false" text="Button" />
                         <Button mnemonicParsing="false" text="Button" />
                     </children>
@@ -41,5 +44,5 @@
                 </VBox>
             </children>
         </VBox>
-    </children>
+    </children> 
 </AnchorPane>
