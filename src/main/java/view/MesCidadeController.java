@@ -5,9 +5,9 @@ package view;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -15,14 +15,34 @@ import javafx.fxml.Initializable;
  *
  * @author elizelton.santos
  */
-public class MesCidadeController implements Initializable {
+public class MesCidadeController implements Initializable
+{
 
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private void acIncluir()
+    {
+
+    }
+
+    @FXML
+    private void acExcluir()
+    {
+
+    }
+
+    @FXML
+    private void acAlterar()
+    {
+
+    }
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
         // TODO
-    }    
-    
+    }
+
 }

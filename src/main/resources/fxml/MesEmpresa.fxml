@@ -7,42 +7,43 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="view.MesEmpresaController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="790.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MesEmpresaController">
     <stylesheets>
         <URL value="@/styles/Styles.css" />
     </stylesheets>
-   <children>
-      <VBox layoutX="44.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0" spacing="5.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Separator orientation="VERTICAL" prefHeight="50.0" />
-                  <ComboBox prefWidth="150.0" />
-                  <Separator orientation="VERTICAL" prefHeight="50.0" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </HBox>
-            <VBox prefHeight="350.0" prefWidth="600.0">
-               <children>
-                  <TableView prefHeight="350.0" prefWidth="600.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-   </children>
+    <children>
+        <VBox layoutX="44.0" layoutY="100.0" prefHeight="500.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="600.0" spacing="5.0">
+                    <children>
+                        <MaterialDesignIconView fx:id="btnImportar" glyphName="PLUS" onMouseClicked="#acImportar" size="1.3em" />
+                        <MaterialDesignIconView fx:id="btnNaoSeiOqFaz" glyphName="PENCIL" onMouseClicked="#acNaoSeiOqFaz" size="1.3em" />
+                        <Separator orientation="VERTICAL" prefHeight="50.0" />
+                        <ComboBox prefWidth="150.0" />
+                        <Separator orientation="VERTICAL" prefHeight="50.0" />
+                        <MaterialDesignIconView fx:id="btnRemover" glyphName="PLUS" onMouseClicked="#acRemover" size="1.3em" />
+                        <MaterialDesignIconView fx:id="btnAlterar" glyphName="PENCIL" onMouseClicked="#acAlterar" size="1.3em" />
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <VBox prefHeight="460.0" prefWidth="600.0">
+                    <children>
+                        <TableView prefHeight="460.0" prefWidth="790.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="C1" />
+                                <TableColumn prefWidth="75.0" text="C2" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
