@@ -24,8 +24,8 @@ public class PrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Cidade cidade = new Cidade ("Ponta Grossa", "PG");
-        cidadeRepository.save(cidade);
+//        Cidade cidade = new Cidade ("Ponta Grossa", "PG");
+//        cidadeRepository.save(cidade);
         
        /* Empresa empresa = new Empresa ("Strack venda de computadores", "PC's Strack","122345", "");
         empresaRepository.save(empresa);*/
