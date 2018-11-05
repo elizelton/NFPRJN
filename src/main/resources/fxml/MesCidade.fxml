@@ -16,7 +16,7 @@
     <children>
         <VBox layoutX="44.0" layoutY="100.0" prefHeight="500.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="790.0" spacing="5.0">
+                <HBox alignment="CENTER_LEFT" minHeight="30.0" prefHeight="30.0" prefWidth="790.0" spacing="5.0">
                     <children>
                         <MaterialDesignIconView fx:id="btnIncluir" glyphName="PLUS" onMouseClicked="#acIncluir" size="1.3em" />
                         <MaterialDesignIconView fx:id="btnAlterar" glyphName="PENCIL" onMouseClicked="#acAlterar" size="1.3em" />
