@@ -24,6 +24,9 @@ public class Cidade {
     @Indexed (unique = true)
     private String sigla;
 
+    public Cidade() {
+    }
+
     public Cidade(String nome, String sigla) {
         this.nome = nome;
         this.sigla = sigla;

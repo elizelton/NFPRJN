@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -41,7 +42,13 @@
                   </VBox>
                   <VBox>
                      <children>
-                        <Label text="%lbl.cidade.text" />
+                        <HBox prefHeight="0.0" prefWidth="152.0" spacing="5.0">
+                           <children>
+                              <Label text="%lbl.cidade.text" />
+                              <MaterialDesignIconView fx:id="btnIncluir" glyphName="PLUS" onMouseClicked="#acIncluir" />
+                              <MaterialDesignIconView fx:id="btnAlterar" glyphName="PENCIL" onMouseClicked="#acAlterar" />
+                           </children>
+                        </HBox>
                         <ComboBox fx:id="cmbBoxCidade" prefWidth="150.0" />
                      </children>
                   </VBox>
