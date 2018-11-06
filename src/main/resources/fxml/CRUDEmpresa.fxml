@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,25 +8,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefWidth="330.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="view.CRUDEmpresaController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefWidth="330.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CRUDEmpresaController">
     <stylesheets>
         <URL value="@/styles/Styles.css" />
     </stylesheets>
    <children>
-      <VBox alignment="CENTER" layoutX="184.0" layoutY="58.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <VBox alignment="CENTER" layoutX="184.0" layoutY="58.0" prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
             <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
                <children>
                   <VBox>
                      <children>
-                        <Label text="lbl.cnpj.text" />
-                        <TextField />
+                        <Label text="%lbl.cnpj.text" />
+                        <TextField fx:id="txtFldCNPJ" />
                      </children>
                   </VBox>
                   <VBox>
                      <children>
                         <Label text="%lbl.razaoSocial.text" />
-                        <TextField />
+                        <TextField fx:id="txtFldRazaoSocial" />
                      </children>
                   </VBox>
                </children>
@@ -35,13 +36,13 @@
                   <VBox>
                      <children>
                         <Label text="%lbl.nomeFantasia.text" />
-                        <TextField />
+                        <TextField fx:id="txtFldNomeFantasia" />
                      </children>
                   </VBox>
                   <VBox>
                      <children>
                         <Label text="%lbl.cidade.text" />
-                        <ComboBox prefWidth="150.0" />
+                        <ComboBox fx:id="cmbBoxCidade" prefWidth="150.0" />
                      </children>
                   </VBox>
                </children>
@@ -51,16 +52,19 @@
                   <VBox>
                      <children>
                         <Label text="%lbl.observacao.text" />
-                        <TextField maxWidth="315.0" prefHeight="25.0" prefWidth="310.0" />
+                        <TextField fx:id="txtFldObservacao" maxWidth="315.0" prefHeight="25.0" prefWidth="310.0" />
                      </children>
                   </VBox>
                </children>
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="%btn.salvar.text" />
-                  <Button mnemonicParsing="false" text="%btn.cancelar.text" />
+                  <Button fx:id="btnConfirma" mnemonicParsing="false" onAction="#btnConfirmaClick" text="%btn.salvar.text" />
+                  <Button cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#btnCancelaClick" text="%btn.cancelar.text" />
                </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
             </HBox>
          </children>
       </VBox>

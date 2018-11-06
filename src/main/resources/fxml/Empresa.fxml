@@ -31,7 +31,7 @@
                 </HBox>
                 <VBox prefHeight="460.0" prefWidth="790.0">
                     <children>
-                        <TableView prefHeight="460.0" prefWidth="790.0">
+                        <TableView fx:id="tblViewEmpresa" prefHeight="460.0" prefWidth="790.0">
                             <columns>
                                 <TableColumn prefWidth="75.0" text="C1" />
                                 <TableColumn prefWidth="75.0" text="C2" />
