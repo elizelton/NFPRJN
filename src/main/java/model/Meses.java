@@ -32,6 +32,14 @@ public class Meses {
     private Double valorTotal;
     private Double credito;
 
+    public Meses(String mes, String ano, int numeroNotas, Double valorTotal, Double credito) {
+        this.mes = mes;
+        this.ano = ano;
+        this.numeroNotas = numeroNotas;
+        this.valorTotal = valorTotal;
+        this.credito = credito;
+    }
+
     public String getMes() {
         return mes;
     }

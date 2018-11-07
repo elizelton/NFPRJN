@@ -1,7 +1,10 @@
 package view;
 
+import Config.Config;
+import static Config.Config.i18n;
 import static Config.DAO.cidadeRepository;
 import static Config.DAO.empresaRepository;
+import static Config.DAO.mesesRepository;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -10,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import model.Cidade;
 import model.Empresa;
+import model.Meses;
 
 public class PrincipalController implements Initializable {
 
@@ -37,5 +41,8 @@ public class PrincipalController implements Initializable {
 //
 //        Empresa empresa = new Empresa ("Strack venda de computadores", "PC's Strack","122345", "");
 //        empresaRepository.save(empresa);
+          Meses mes;
+//        mes = new Meses(i18n.getString("janeiro.text"), "2018", 10, 2000.00, 150.00 );
+//        mesesRepository.save(mes);
     }
 }
