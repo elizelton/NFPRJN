@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -21,6 +22,9 @@ public class MesEmpresaController implements Initializable
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private TableView tblViewTotal;
+    
     @FXML
     private void acImportar()
     {
@@ -48,7 +52,7 @@ public class MesEmpresaController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+       
     }
 
 }
