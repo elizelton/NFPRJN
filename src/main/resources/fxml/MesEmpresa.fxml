@@ -37,8 +37,13 @@
                     <children>
                         <TableView prefHeight="460.0" prefWidth="790.0">
                             <columns>
-                                <TableColumn prefWidth="75.0" text="C1" />
-                                <TableColumn prefWidth="75.0" text="C2" />
+                                <TableColumn prefWidth="180.0" text="%lbl.empresa.text" />
+                                <TableColumn prefWidth="75.0" text="%lbl.cidade.text" />
+                        <TableColumn text="%lbl.notas.text" />
+                        <TableColumn prefWidth="120.0" text="%lbl.total.text" />
+                        <TableColumn prefWidth="120.0" text="%lbl.totalCredito.text" />
+                        <TableColumn text="%lbl.porcentagem.text" />
+                        <TableColumn text="%lbl.media/nota.text" />
                             </columns>
                         </TableView>
                     </children>
