@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrincipalController">
     <children>
-        <VBox prefHeight="500.0" prefWidth="790.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+        <VBox prefHeight="500.0" prefWidth="790.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <TabPane tabClosingPolicy="UNAVAILABLE">
                     <tabs>
