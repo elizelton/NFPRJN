@@ -9,6 +9,7 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 <?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import br.uepg.deinfo.linguagem.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="790.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MesEmpresaController">
     <stylesheets>
