@@ -15,19 +15,22 @@ import model.Cidade;
 import model.Empresa;
 import model.Meses;
 
-public class PrincipalController implements Initializable {
+public class PrincipalController implements Initializable
+{
 
     @FXML
     private Label label;
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event)
+    {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
 //        Cidade cidade = new Cidade("Ponta Grossa", "PG");
 //        cidadeRepository.save(cidade);
 //        Cidade cidade = new Cidade("Carambeí", "Cbei");
@@ -41,8 +44,8 @@ public class PrincipalController implements Initializable {
 //
 //        Empresa empresa = new Empresa ("Strack venda de computadores", "PC's Strack","122345", "");
 //        empresaRepository.save(empresa);
-          Meses mes;
-//        mes = new Meses(i18n.getString("janeiro.text"), "2018", 10, 2000.00, 150.00 );
+//        Meses mes;
+//        mes = new Meses("janeiro.text", "2018", 10, 2000.00, 150.00);
 //        mesesRepository.save(mes);
     }
 }

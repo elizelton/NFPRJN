@@ -24,7 +24,7 @@ public class MesEmpresaController implements Initializable
      */
     @FXML
     private TableView tblViewTotal;
-    
+
     @FXML
     private void acImportar()
     {
@@ -52,7 +52,8 @@ public class MesEmpresaController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-       
+        tblViewTotal.getStyleClass().add("noheader");
+
     }
 
 }
