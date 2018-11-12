@@ -9,7 +9,6 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 <?import de.jensd.fx.glyphs.materialdesignicons.*?>
-<?import br.uepg.deinfo.linguagem.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="790.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MesEmpresaController">
     <stylesheets>
@@ -37,15 +36,43 @@
                 </HBox>
                 <VBox prefHeight="460.0" prefWidth="600.0">
                     <children>
-                        <TableView prefHeight="460.0" prefWidth="790.0">
+                        <TableView fx:id="tblViewNotas" prefHeight="460.0" prefWidth="790.0">
                             <columns>
-                                <TableColumn prefWidth="180.0" text="%lbl.empresa.text" />
-                                <TableColumn prefWidth="75.0" text="%lbl.cidade.text" />
-                                <TableColumn text="%lbl.notas.text" />
-                                <TableColumn prefWidth="120.0" text="%lbl.total.text" />
-                                <TableColumn prefWidth="120.0" text="%lbl.totalCredito.text" />
-                                <TableColumn text="%lbl.porcentagem.text" />
-                                <TableColumn text="%lbl.media/nota.text" />
+                                <TableColumn prefWidth="92.0" text="%lbl.empresa.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="NomeFantasia" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="92.0" text="%lbl.cidade.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="CidadeSigla" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="92.0" text="%lbl.notas.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="NumeroNotas" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="92.0" text="%lbl.total.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="ValorTotal" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="92.0" text="%lbl.totalCredito.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="Credito" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="92.0" text="%lbl.porcentagem.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="PercCredito" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="92.0" text="%lbl.media/nota.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="MediaPorNota" />
+                                    </cellValueFactory>
+                                </TableColumn>
                             </columns>
                         </TableView>
                     </children>

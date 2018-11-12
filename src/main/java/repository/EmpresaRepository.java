@@ -16,6 +16,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface EmpresaRepository extends MongoRepository<Empresa, String>{
     public List<Empresa> findByNomeFantasiaLikeIgnoreCaseOrCnpjLikeOrRazaoSocialLikeIgnoreCase(String nomeFantasia,String Cnpj,String razaoSocial);
+    public Empresa findByNomeFantasiaLikeIgnoreCase(String nomeFantasia);
 }
 
 

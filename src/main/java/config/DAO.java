@@ -6,6 +6,7 @@
 package Config;
 
 import Repository.EmpresaRepository;
+import Repository.MesEmpresaRepository;
 import Repository.MesesRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import repository.CidadeRepository;
@@ -21,5 +22,7 @@ public class DAO {
     public static CidadeRepository cidadeRepository = ctx.getBean(CidadeRepository.class); //Objetos de persistencia ( que ficam no banco )
     public static EmpresaRepository empresaRepository = ctx.getBean(EmpresaRepository.class); //Objetos de persistencia ( que ficam no banco )
     public static MesesRepository mesesRepository = ctx.getBean(MesesRepository.class); //Objetos de persistencia ( que ficam no banco )
+    public static MesEmpresaRepository mesEmpresaRepository = ctx.getBean(MesEmpresaRepository.class); //Objetos de persistencia ( que ficam no banco )
+    
 
 }

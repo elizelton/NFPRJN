@@ -5,8 +5,12 @@ package view;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import static Config.DAO.mesEmpresaRepository;
+import static Config.DAO.mesesRepository;
+import Repository.MesesRepository;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
@@ -22,6 +26,10 @@ public class MesEmpresaController implements Initializable
     /**
      * Initializes the controller class.
      */
+    
+    @FXML
+    private TableView tblViewNotas;
+    
     @FXML
     private TableView tblViewTotal;
 
@@ -54,6 +62,7 @@ public class MesEmpresaController implements Initializable
     {
         tblViewTotal.getStyleClass().add("noheader");
 
+       tblViewNotas.setItems(FXCollections.observableList(mesEmpresaRepository.findAll()));
     }
 
 }

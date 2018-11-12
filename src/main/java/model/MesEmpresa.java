@@ -35,8 +35,22 @@ public class MesEmpresa {
     private Double valorTotal;
     private Double credito;
 
+    public MesEmpresa(Empresa empresa, String mes, String ano, int numeroNotas, Double valorTotal, Double credito) {
+        this.empresa = empresa;
+        this.mes = mes;
+        this.ano = ano;
+        this.numeroNotas = numeroNotas;
+        this.valorTotal = valorTotal;
+        this.credito = credito;
+    }
+
     public String getNomeFantasia(){
-        return empresa.getNomeFantasia();
+        if (empresa.getNomeFantasia() == null){
+            return "";
+        }else{
+            return empresa.getNomeFantasia();
+        }
+        
     }
     
     public String getCidadeSigla(){
