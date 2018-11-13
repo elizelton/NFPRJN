@@ -38,11 +38,11 @@ import utility.XPopOver;
  *
  * @author Elizelton
  */
-public class CRUDEmpresaController implements Initializable
-{
+public class CRUDEmpresaController implements Initializable {
+
     char acao;
     protected Cidade cidade;
-    
+
     private EmpresaController controllerPai;
     @FXML
     private AnchorPane anchorPane;
@@ -62,36 +62,32 @@ public class CRUDEmpresaController implements Initializable
     private MaterialDesignIconView btnIncluir;
     @FXML
     private MaterialDesignIconView btnAlterar;
+
     @FXML
-    private void btnCancelaClick()
-    {
+    private void btnCancelaClick() {
         anchorPane.getScene().getWindow().hide();
 //        controllerPai.tblViewAlunos.requestFocus();
     }
-    
+
     @FXML
-    private void acIncluir()
-    {
+    private void acIncluir() {
         acao = INCLUIR;
         cidade = new Cidade();
         showCRUD();
     }
-    
+
     @FXML
-    private void acAlterar()
-    {
+    private void acAlterar() {
         cidade = (Cidade) cmbBoxCidade.getSelectionModel().getSelectedItem();
         acao = ALTERAR;
         showCRUD();
     }
-    
-    private void showCRUD()
-    {
+
+    private void showCRUD() {
         String cena = "/fxml/CRUDCidade.fxml";
         XPopOver popOver = null;
 
-        switch (acao)
-        {
+        switch (acao) {
             case INCLUIR:
                 popOver = new XPopOver(cena, i18n.getString("incluir.cidade.text"), btnIncluir, PopOver.ArrowLocation.TOP_LEFT);
                 break;
@@ -107,17 +103,15 @@ public class CRUDEmpresaController implements Initializable
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         btnConfirma.disableProperty().bind(txtFldCNPJ.textProperty().isEmpty().
                 or(txtFldNomeFantasia.textProperty().isEmpty()).or(txtFldObservacao.textProperty().isEmpty()).or(txtFldRazaoSocial.textProperty().isEmpty()).or(cmbBoxCidade.getSelectionModel().selectedItemProperty().isNull()));
     }
 
-    void setCadastroController(EmpresaController controllerPai)
-    {
+    void setCadastroController(EmpresaController controllerPai) {
         cmbBoxCidade.setItems(FXCollections.observableArrayList(cidadeRepository.findAll(new Sort(new Sort.Order("nome")))));
         this.controllerPai = controllerPai;
-        
+
         txtFldCNPJ.setText(controllerPai.empresa.getCnpj());
         txtFldNomeFantasia.setText(controllerPai.empresa.getNomeFantasia());
         txtFldRazaoSocial.setText(controllerPai.empresa.getRazaoSocial());
@@ -125,24 +119,22 @@ public class CRUDEmpresaController implements Initializable
         cmbBoxCidade.setValue(controllerPai.empresa.getCidade());
 
         txtFldCNPJ.setDisable(controllerPai.acao == EXCLUIR);
+        txtFldCNPJ.setDisable(controllerPai.acao == ALTERAR);
         txtFldNomeFantasia.setDisable(controllerPai.acao == EXCLUIR);
         txtFldRazaoSocial.setDisable(controllerPai.acao == EXCLUIR);
         txtFldObservacao.setDisable(controllerPai.acao == EXCLUIR);
-        
+
     }
 
     @FXML
-    private void btnConfirmaClick()
-    {
+    private void btnConfirmaClick() {
         controllerPai.empresa.setCnpj(txtFldCNPJ.getText());
         controllerPai.empresa.setNomeFantasia(txtFldNomeFantasia.getText());
         controllerPai.empresa.setRazaoSocial(txtFldRazaoSocial.getText());
         controllerPai.empresa.setCidade((Cidade) cmbBoxCidade.getSelectionModel().getSelectedItem());
 
-        try
-        {
-            switch (controllerPai.acao)
-            {
+        try {
+            switch (controllerPai.acao) {
                 case INCLUIR:
                     empresaRepository.insert(controllerPai.empresa);
                     break;
@@ -160,9 +152,8 @@ public class CRUDEmpresaController implements Initializable
             controllerPai.tblViewEmpresa.getSelectionModel().clearSelection();
             controllerPai.tblViewEmpresa.getSelectionModel().select(controllerPai.empresa);
             anchorPane.getScene().getWindow().hide();
-        } catch (Exception e)
-        {
-           Alert alert = new Alert(Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle(i18n.getString("erro.text"));
             alert.setHeaderText(i18n.getString("erro.empresa.header.text"));
             if (e.getMessage().contains("duplicate key")) {

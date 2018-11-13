@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package model;
 
 import java.util.Objects;
@@ -14,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * 
+ *
  * @author Gabriel Strack
  */
 @Document
@@ -25,6 +24,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 })
 public class MesEmpresa {
+
     @Id
     private String id;
     @DBRef
@@ -44,23 +44,18 @@ public class MesEmpresa {
         this.credito = credito;
     }
 
-    public String getNomeFantasia(){
-        if (empresa.getNomeFantasia() == null){
-            return "";
-        }else{
-            return empresa.getNomeFantasia();
-        }
-        
+    public String getNomeFantasia() {
+        return empresa.getNomeFantasia();
     }
-    
-    public String getCidadeSigla(){
-        if (empresa.getCidade() != null){
+
+    public String getCidadeSigla() {
+        if (empresa.getCidade() != null) {
             return empresa.getCidade().getSigla();
-        }else{
+        } else {
             return "";
         }
     }
-    
+
     public Empresa getEmpresa() {
         return empresa;
     }
@@ -84,7 +79,7 @@ public class MesEmpresa {
     public void setAno(String ano) {
         this.ano = ano;
     }
-    
+
     public int getNumeroNotas() {
         return numeroNotas;
     }
@@ -108,13 +103,13 @@ public class MesEmpresa {
     public void setCredito(Double credito) {
         this.credito = credito;
     }
-    
-    public Double getPercCredito(){
-        return (credito/valorTotal)*100;
+
+    public Double getPercCredito() {
+        return (credito / valorTotal) * 100;
     }
-    
-    public Double getMediaPorNota(){
-        return credito/numeroNotas;
+
+    public Double getMediaPorNota() {
+        return credito / numeroNotas;
     }
 
     @Override
@@ -141,6 +136,5 @@ public class MesEmpresa {
         }
         return true;
     }
-    
-    
+
 }

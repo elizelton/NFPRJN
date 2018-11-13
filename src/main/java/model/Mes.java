@@ -22,7 +22,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
             def = "{'ano': 1,'mes': 1}", unique = true)
 
 })
-public class Meses {
+public class Mes {
 
     @Id
     private String id;
@@ -32,7 +32,7 @@ public class Meses {
     private Double valorTotal;
     private Double credito;
 
-    public Meses(String mes, String ano, int numeroNotas, Double valorTotal, Double credito) {
+    public Mes(String mes, String ano, int numeroNotas, Double valorTotal, Double credito) {
         this.mes = mes;
         this.ano = ano;
         this.numeroNotas = numeroNotas;
@@ -106,7 +106,7 @@ public class Meses {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Meses other = (Meses) obj;
+        final Mes other = (Mes) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
@@ -115,7 +115,7 @@ public class Meses {
     
     @Override
     public String toString() {
-        return mes + "/" + ano + '}';
+        return mes + "/" + ano ;
     }
 
 }

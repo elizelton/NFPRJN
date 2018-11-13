@@ -16,8 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author Gabriel Strack
  */
 @Document
-public class Empresa
-{
+public class Empresa {
 
     @Id
     private String idEmpresa;
@@ -29,20 +28,17 @@ public class Empresa
     @DBRef
     private Cidade cidade;
 
-    public Empresa()
-    {
+    public Empresa() {
     }
 
-    public Empresa(String razaoSocial, String nomeFantasia, String cnpj, String observacao)
-    {
+    public Empresa(String razaoSocial, String nomeFantasia, String cnpj, String observacao) {
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
         this.observacao = observacao;
     }
 
-    public Empresa(String razaoSocial, String nomeFantasia, String cnpj, String observacao, Cidade cidade)
-    {
+    public Empresa(String razaoSocial, String nomeFantasia, String cnpj, String observacao, Cidade cidade) {
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
@@ -50,90 +46,77 @@ public class Empresa
         this.cidade = cidade;
     }
 
-    public String getRazaoSocial()
-    {
+    public String getRazaoSocial() {
         return razaoSocial;
     }
 
-    public void setRazaoSocial(String razaoSocial)
-    {
+    public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
     }
 
-    public String getNomeFantasia()
-    {
-        return nomeFantasia;
+    public String getNomeFantasia() {
+        if (nomeFantasia == null) {
+            return "";
+        } else {
+            return nomeFantasia;
+        }
     }
 
-    public void setNomeFantasia(String nomeFantasia)
-    {
+    public void setNomeFantasia(String nomeFantasia) {
         this.nomeFantasia = nomeFantasia;
     }
 
-    public String getCnpj()
-    {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(String cnpj)
-    {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
-    public String getObservacao()
-    {
+    public String getObservacao() {
         return observacao;
     }
 
-    public void setObservacao(String observacao)
-    {
+    public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
 
-    public Cidade getCidade()
-    {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(Cidade cidade)
-    {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 3;
         hash = 83 * hash + Objects.hashCode(this.idEmpresa);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (obj == null)
-        {
+        if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass())
-        {
+        if (getClass() != obj.getClass()) {
             return false;
         }
         final Empresa other = (Empresa) obj;
-        if (!Objects.equals(this.idEmpresa, other.idEmpresa))
-        {
+        if (!Objects.equals(this.idEmpresa, other.idEmpresa)) {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return nomeFantasia;
     }
 

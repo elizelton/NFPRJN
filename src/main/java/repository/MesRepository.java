@@ -5,14 +5,17 @@
  */
 package Repository;
 
+import java.util.List;
 import model.Empresa;
-import model.Meses;
+import model.Mes;
+import model.MesEmpresa;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
  * @author Gabriel Strack
  */
-public interface MesesRepository extends MongoRepository<Meses, String>{
-    
+public interface MesRepository extends MongoRepository<Mes, String> {
+
+    public List<Mes> findByAnoAndMes(String ano, String mes);
 }

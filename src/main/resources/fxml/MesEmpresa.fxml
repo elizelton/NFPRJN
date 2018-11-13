@@ -22,7 +22,7 @@
                         <MaterialDesignIconView fx:id="btnImportar" glyphName="PLUS" onMouseClicked="#acImportar" size="1.3em" />
                         <MaterialDesignIconView fx:id="btnNaoSeiOqFaz" glyphName="PENCIL" onMouseClicked="#acNaoSeiOqFaz" size="1.3em" />
                         <Separator orientation="VERTICAL" prefHeight="50.0" />
-                        <ComboBox prefWidth="150.0" />
+                        <ComboBox fx:id="cmbMes" onAction="#cbmMesClicked" onMouseClicked="#cbmMesClicked" prefWidth="150.0" />
                         <Separator orientation="VERTICAL" prefHeight="50.0" />
                         <MaterialDesignIconView fx:id="btnRemover" glyphName="PLUS" onMouseClicked="#acRemover" size="1.3em" />
                         <MaterialDesignIconView fx:id="btnAlterar" glyphName="PENCIL" onMouseClicked="#acAlterar" size="1.3em" />
@@ -34,53 +34,87 @@
                         <Insets left="10.0" />
                     </padding>
                 </HBox>
-                <VBox prefHeight="460.0" prefWidth="600.0">
+                <VBox prefHeight="398.0" prefWidth="780.0">
                     <children>
-                        <TableView fx:id="tblViewNotas" prefHeight="460.0" prefWidth="790.0">
+                        <TableView fx:id="tblViewNotas" prefHeight="376.0" prefWidth="780.0">
                             <columns>
-                                <TableColumn prefWidth="92.0" text="%lbl.empresa.text">
+                                <TableColumn prefWidth="168.0" text="%lbl.empresa.text">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="NomeFantasia" />
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="92.0" text="%lbl.cidade.text">
+                                <TableColumn prefWidth="76.0" style="-fx-alignment: center" text="%lbl.cidade.text">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="CidadeSigla" />
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="92.0" text="%lbl.notas.text">
+                                <TableColumn prefWidth="90.0" text="%lbl.notas.text">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="NumeroNotas" />
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="92.0" text="%lbl.total.text">
+                                <TableColumn prefWidth="97.0" text="%lbl.total.text">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="ValorTotal" />
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="92.0" text="%lbl.totalCredito.text">
+                                <TableColumn prefWidth="103.0" text="%lbl.totalCredito.text">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="Credito" />
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="92.0" text="%lbl.porcentagem.text">
+                                <TableColumn prefWidth="127.0" text="%lbl.porcentagem.text">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="PercCredito" />
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="92.0" text="%lbl.media/nota.text">
+                                <TableColumn prefWidth="117.0" text="%lbl.media/nota.text">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="MediaPorNota" />
                                     </cellValueFactory>
                                 </TableColumn>
                             </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
                         </TableView>
                     </children>
                 </VBox>
-                <TableView fx:id="tblViewTotal" prefHeight="200.0" prefWidth="200.0">
+                <TableView fx:id="tblViewTotal" depthTest="ENABLE" prefWidth="780.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="168.0">
+                        </TableColumn>
+                        <TableColumn prefWidth="76.0">
+                        </TableColumn>
+                        <TableColumn prefWidth="90.0" text="%lbl.notas.text">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="NumeroNotas" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="97.0" text="%lbl.total.text">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="ValorTotal" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="103.0" text="%lbl.totalCredito.text">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Credito" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="127.0" text="%lbl.porcentagem.text">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="PercCredito" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="117.0" text="%lbl.media/nota.text">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="MediaPorNota" />
+                            </cellValueFactory>
+                        </TableColumn>
                     </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
                 </TableView>
             </children>
             <padding>

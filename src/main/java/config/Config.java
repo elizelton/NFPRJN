@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
  */
 public class Config {
 
-    public static final ResourceBundle i18n = ResourceBundle.getBundle(String.format("i18n.Bundle_%s", "en_US")); // Internacionalização ex: pt_BR, en_US ...
+    public static final ResourceBundle i18n = ResourceBundle.getBundle(String.format("i18n.Bundle_%s", "pt_BR")); // Internacionalização ex: pt_BR, en_US ...
     public static final DateTimeFormatter df = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
     public static final NumberFormat nfc = NumberFormat.getCurrencyInstance();
 

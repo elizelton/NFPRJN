@@ -14,9 +14,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author Gabriel Strack
  */
-public interface EmpresaRepository extends MongoRepository<Empresa, String>{
-    public List<Empresa> findByNomeFantasiaLikeIgnoreCaseOrCnpjLikeOrRazaoSocialLikeIgnoreCase(String nomeFantasia,String Cnpj,String razaoSocial);
+public interface EmpresaRepository extends MongoRepository<Empresa, String> {
+
+    public List<Empresa> findByNomeFantasiaLikeIgnoreCaseOrCnpjLikeOrRazaoSocialLikeIgnoreCase(String nomeFantasia, String Cnpj, String razaoSocial);
+
     public Empresa findByNomeFantasiaLikeIgnoreCase(String nomeFantasia);
+
 }
-
-
