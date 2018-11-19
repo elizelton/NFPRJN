@@ -79,15 +79,15 @@ public class Mes {
     public void setCredito(Double credito) {
         this.credito = credito;
     }
-    
-    public Double getPercCredito(){
-        return (credito/valorTotal)*100;
+
+    public Double getPercCredito() {
+        return (credito / valorTotal) * 100;
     }
-    
-    public Double getMediaPorNota(){
-        return credito/numeroNotas;
+
+    public Double getMediaPorNota() {
+        return credito / numeroNotas;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 5;
@@ -112,10 +112,10 @@ public class Mes {
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
-        return mes + "/" + ano ;
+        return mes + "/" + ano;
     }
 
 }

@@ -10,6 +10,7 @@ import Repository.MesEmpresaRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import repository.CidadeRepository;
 import Repository.MesRepository;
+import repository.InstituicaoRepository;
 
 /**
  *
@@ -20,9 +21,9 @@ public class DAO {
     private static final AnnotationConfigApplicationContext ctx
             = new AnnotationConfigApplicationContext(DBConfig.class);
     public static CidadeRepository cidadeRepository = ctx.getBean(CidadeRepository.class); //Objetos de persistencia ( que ficam no banco )
+    public static InstituicaoRepository instituicaoRepository = ctx.getBean(InstituicaoRepository.class); //Objetos de persistencia ( que ficam no banco )
     public static EmpresaRepository empresaRepository = ctx.getBean(EmpresaRepository.class); //Objetos de persistencia ( que ficam no banco )
     public static MesRepository mesRepository = ctx.getBean(MesRepository.class); //Objetos de persistencia ( que ficam no banco )
     public static MesEmpresaRepository mesEmpresaRepository = ctx.getBean(MesEmpresaRepository.class); //Objetos de persistencia ( que ficam no banco )
-    
 
 }

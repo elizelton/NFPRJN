@@ -5,12 +5,27 @@
  */
 package model;
 
+import static Config.DAO.empresaRepository;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.json.JSONObject;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.HTTP;
 
 /**
  *
@@ -42,6 +57,12 @@ public class MesEmpresa {
         this.numeroNotas = numeroNotas;
         this.valorTotal = valorTotal;
         this.credito = credito;
+    }
+
+    public void somaNota(Double valorTotal, Double credito) {
+        this.numeroNotas += 1;
+        this.valorTotal += valorTotal;
+        this.credito += credito;
     }
 
     public String getNomeFantasia() {
@@ -135,6 +156,32 @@ public class MesEmpresa {
             return false;
         }
         return true;
+    }
+
+    private static String readAll(Reader rd) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int cp;
+        while ((cp = rd.read()) != -1) {
+            sb.append((char) cp);
+        }
+        return sb.toString();
+    }
+
+    private JSONObject readJsonFromUrl(String url) throws MalformedURLException, IOException {
+        InputStream is = new URL(url).openStream();
+        try {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            String jsonText = readAll(rd);
+            JSONObject json = new JSONObject(jsonText);
+            return json;
+        } finally {
+            is.close();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "MesEmpresa{" + "empresa=" + empresa + ", mes=" + mes + ", ano=" + ano + ", numeroNotas=" + numeroNotas + ", valorTotal=" + valorTotal + ", credito=" + credito + '}';
     }
 
 }

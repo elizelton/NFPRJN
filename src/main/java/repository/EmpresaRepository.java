@@ -20,4 +20,6 @@ public interface EmpresaRepository extends MongoRepository<Empresa, String> {
 
     public Empresa findByNomeFantasiaLikeIgnoreCase(String nomeFantasia);
 
+    public Empresa findByCnpj(String cnpj);
+
 }

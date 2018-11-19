@@ -19,7 +19,7 @@ public class Config {
     public static final ResourceBundle i18n = ResourceBundle.getBundle(String.format("i18n.Bundle_%s", "pt_BR")); // Internacionalização ex: pt_BR, en_US ...
     public static final DateTimeFormatter df = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
     public static final NumberFormat nfc = NumberFormat.getCurrencyInstance();
-
+    public static final NumberFormat nf = NumberFormat.getInstance();
 
     public static final char INCLUIR = 'I';
     public static final char ALTERAR = 'A';

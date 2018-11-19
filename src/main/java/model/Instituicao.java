@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package model;
 
 import java.util.Objects;
@@ -11,15 +10,21 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * 
+ *
  * @author Gabriel Strack
  */
 @Document
 public class Instituicao {
+
     @Id
     private String id;
     private String nome;
     private String cnpj;
+
+    public Instituicao(String nome, String cnpj) {
+        this.nome = nome;
+        this.cnpj = cnpj;
+    }
 
     public String getNome() {
         return nome;
@@ -66,6 +71,5 @@ public class Instituicao {
     public String toString() {
         return nome;
     }
-    
-    
+
 }
